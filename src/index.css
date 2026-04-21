@@ -1,0 +1,29 @@
+:root {
+  --text: #3e3944;
+  --text-h: #777777;
+  --bg: rgba(255, 228, 196, 0.8);
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #3b80ff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(158, 158, 158, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+html, body {
+  height: auto;
+  overflow-y: auto;
+}

@@ -1,0 +1,174 @@
+/* --- Desktop Styles --- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg);
+  z-index: 10000;
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+  height: auto;
+  overflow-y: auto;
+}
+
+.header.show {
+  transform: translateY(0);
+}
+
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-links a:hover {
+  background-color: var(--text-h);
+  border-radius: 8px;
+  color: var(--code-bg);
+  padding: 10px 20px;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-btn input {
+  width: 200px;
+  height: 35px;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  padding: 0 35px 0 10px;
+  background: transparent;
+  color: var(--text);
+}
+
+.search-btn button {
+  position: absolute;
+  right: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  font-size: 1.8rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* --- Tablet & Mobile Responsiveness (768px) --- */
+@media screen and (max-width: 768px) {
+  .header {
+    height: 80px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .header-container {
+    padding: 0 25px;
+    display: flex !important;
+    flex-direction: row !important; /* Keep Logo and Hamburger side-by-side */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger icon */
+    z-index: 10001;
+  }
+
+  .search-btn {
+    display: none; /* Hide search bar on mobile to keep header clean */
+  }
+
+  /* Mobile Navigation Drawer */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hidden off-screen */
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.5s ease-in-out;
+  }
+
+  .navigation.open {
+    left: 0; /* Slide in when open */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px !important;
+  }
+
+  .nav-links a {
+    font-size: 2rem;
+    color: var(--accent);
+    font-size: 1.5rem !important;
+  }
+}
+
+/* --- Small Mobile Styles (480px) --- */
+@media screen and (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .menu-toggle {
+    font-size: 1.5rem;
+  }
+}

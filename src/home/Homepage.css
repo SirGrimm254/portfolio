@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.homepage {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+}
+
+#about {
+  scroll-margin-top: 1px;
+}
+
+html, body {
+  height: auto;
+  overflow-y: auto;
+}
